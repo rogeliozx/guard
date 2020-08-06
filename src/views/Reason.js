@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import CardContent from '@material-ui/core/CardContent';
@@ -23,14 +23,6 @@ const Reason = ({ createVisit }) => {
   const classes = useStyles();
   return (
     <>
-     <div>
-        <iframe
-          title='This is a unique title'
-          src='http://localhost:3001/index'
-          className={classes.iframe}
-          referrerPolicy='strict-origin'
-        ></iframe>
-      </div>
       <Card className={classes.root}>
         <CardContent>
           <Grid container spacing={0}>

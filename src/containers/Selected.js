@@ -13,6 +13,7 @@ const Selected = ({ setUserIsSelected, setIdUser,setSection }) => {
           setIdUser={setIdUser}
           getUsers={getUsers}
           setUserIsSelected={setUserIsSelected}
+          setIsSelected={setSectionIsSelected}
         />
       ) : (
         <SelectedSections

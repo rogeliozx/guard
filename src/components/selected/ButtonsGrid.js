@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   buttonWidth: {
-    minWidth: '4.5rem',
+    minWidth: "6.5rem",
+  },
+  marginGrid: {
+    marginRight: "2rem",
+    marginBottom:'1rem'
   },
 }));
 const ButtonGrid = ({ idSections, users, handleClick }) => {
   const classes = useStyles();
-  const [buttonValues, setButtonValues] = useState([]);
   return (
     <div className={classes.root}>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         {idSections.map((idSections, index) => (
-          <Grid item xs={1} key={index}>
+          <Grid item xs={1} key={index} className={classes.marginGrid}>
             <Button
-              size='large'
+              size="large"
               className={classes.buttonWidth}
               onClick={() => {
                 handleClick(users ? idSections : idSections.name);
               }}
-              variant='contained'
-              color='primary'
+              variant="contained"
+              color="primary"
               value={1}
               key={index}
             >

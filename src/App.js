@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Selected from './containers/Selected';
-import Loading from './components/ui/Loading';
 import Register from './containers/Register';
 function App() {
   const [userIsSelected, setUserIsSelected] = useState(false);

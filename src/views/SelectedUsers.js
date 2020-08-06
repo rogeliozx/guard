@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ButtonGrid from '../components/selected/ButtonsGrid';
 import Loading from '../components/ui/Loading';
-const SelectedUsers = ({ getUsers,setUserIsSelected,setIdUser }) => {
+import Butons from '../components/ui/Butons';
+const SelectedUsers = ({ getUsers,setUserIsSelected,setIdUser,setIsSelected }) => {
   const [isLoading, setIsLoading] = useState(true);
   const createVisits = useCallback((userId) => {
     setIdUser(userId)
     setUserIsSelected(true)
-  }, []);
+  }, [setIdUser,setUserIsSelected]);
   useEffect(() => {
     setIsLoading(false);
   }, []);
-  useEffect(() => {}, [isLoading]);
+  useEffect(() => {}, [isLoading,]);
   return (
     <>
       {isLoading ? (
@@ -18,6 +19,7 @@ const SelectedUsers = ({ getUsers,setUserIsSelected,setIdUser }) => {
       ) : (
         <ButtonGrid idSections={getUsers} users handleClick={createVisits} />
       )}
+      <Butons backFunction={setIsSelected}/>
     </>
   );
 };

@@ -9,7 +9,7 @@ const SelectedSections = ({ setGetUsers, setIsSelected,setSection }) => {
   const loadSections = useCallback(async () => {
     try {
       const {
-        data: { succes, sections },
+        data: {  sections },
       } = await axios.get('all-names');
       setSections(sections);
     } catch (error) {
@@ -30,7 +30,7 @@ const SelectedSections = ({ setGetUsers, setIsSelected,setSection }) => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [setGetUsers,setSection,setIsSelected]);
   useEffect(() => {
     loadSections();
     setIsLoading(false);
