@@ -21,7 +21,7 @@ body{
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 100px;
+  grid-column-gap: 25px;
 }
 
 .grid > *{
